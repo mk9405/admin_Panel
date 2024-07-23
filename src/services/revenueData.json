@@ -1,0 +1,42 @@
+[
+    {
+        "label": "jan",
+        "revenue": 135,
+        "profit": 81
+    },
+    {
+        "label": "feb",
+        "revenue": 182,
+        "profit": 121
+    },
+    {
+        "label": "mar",
+        "revenue": 76,
+        "profit": 40
+    },
+    {
+        "label": "apr",
+        "revenue": 112,
+        "profit": 52
+    },
+    {
+        "label": "may",
+        "revenue": 199,
+        "profit": 164
+    },
+    {
+        "label": "jun",
+        "revenue": 168,
+        "profit": 113
+    },
+    {
+        "label": "jul",
+        "revenue": 49,
+        "profit": 32
+    },
+    {
+        "label": "aug",
+        "revenue": 135,
+        "profit": 81
+    }  
+]

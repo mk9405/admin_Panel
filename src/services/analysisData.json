@@ -1,0 +1,30 @@
+[
+    {
+        "label": "sun",
+        "revenue": 20
+    },
+    {
+        "label": "mon",
+        "revenue": 50
+    },
+    {
+        "label": "tue",
+        "revenue": 7
+    },
+    {
+        "label": "wed",
+        "revenue": 100
+    },
+    {
+        "label": "thu",
+        "revenue": 30
+    },
+    {
+        "label": "fri",
+        "revenue": 80
+    },
+    {
+        "label": "sat",
+        "revenue": 100
+    }
+]
