@@ -54,7 +54,7 @@ export default function LeftSidebar() {
       <aside className="relative overflow-y-scroll h-[700px] no-scrollbar bg-white">
         <img src={logo} alt="Logo" className="p-2" />
         <hr />
-        <div className="px-4 py-2">
+        <div className="p-2">
           <h1 className="font-bold text-xs text-gray-400">MAIN HOME</h1>
           <div
             onClick={handleDashboard}
@@ -71,7 +71,7 @@ export default function LeftSidebar() {
           {showDashboard && (
             <Link to="/">
               <div>
-                <div className="flex items-center gap-2 py-2 px-6 text-base font-semibold text-gray-500 cursor-pointer">
+                <div className="flex items-center gap-2 px-6 text-base font-semibold text-gray-500 cursor-pointer">
                   <div className="w-2 h-2 bg-gray-300 rotate-45">
                     <div className="w-1 h-1 rounded-full bg-white m-[1px]"></div>
                   </div>
@@ -82,7 +82,7 @@ export default function LeftSidebar() {
           )}
         </div>
         {/* =============== all page ================== */}
-        <div className="p-4">
+        <div className="p-2">
           <h1 className="font-bold text-xs text-gray-400">ALL PAGE</h1>
           <div
             onClick={handleEcommerce}
@@ -99,7 +99,7 @@ export default function LeftSidebar() {
           {showEcommerce && (
             <Link to="/ecommerce">
               <div>
-                <div className="flex items-center gap-2 px-6 py-2 text-base font-bold text-gray-500 cursor-pointer">
+                <div className="flex items-center gap-2 px-6 text-base font-bold text-gray-500 cursor-pointer">
                   <div className="w-2 h-2 bg-gray-300 rotate-45">
                     <div className="w-1 h-1 rounded-full bg-white m-[1px]"></div>
                   </div>

@@ -32,7 +32,7 @@ export default function HomePage() {
           <Header />
         </header>
 
-        <main className="mx-5 justify-center">
+        <main className="mx-5 justify-center dark:bg-slate-800">
           <div>
             <AnalysisCart />
           </div>

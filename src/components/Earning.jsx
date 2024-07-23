@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { FaArrowTrendUp } from "react-icons/fa6";
-// import { Chart as ChartJS } from "chart.js/auto"   
+import { Chart as ChartJS } from "chart.js/auto"   
 import { Bar } from "react-chartjs-2";
 import revenueData from "../services/revenueData.json";
 

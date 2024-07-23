@@ -1,14 +1,29 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Header from '../../components/Header'
 import Footer from '../../components/Footer'
 import { IoIosArrowForward } from 'react-icons/io'
+import LeftSidebar from '../../components/Sidebar';
+import { VscThreeBars } from 'react-icons/vsc';
 
 export default function AddAttributes() {
+  const [show, setShow] = useState(false);
+  const handle = () => {
+    setShow(!show);
+  };
+
   return (
-    <div>
-      <header>
-        <Header />
-      </header>
+    <div className="flex flex-row ">
+      <div className={show ? "w-[250px] duration-500" : "w-0 duration-500"}>
+        <LeftSidebar />
+      </div>
+
+      <div className={show ? " w-[60%]  flex-1" : "w-full"}>
+        <header className="flex items-center  justify-between">
+          <div className="text-3xl pl-2">
+            <VscThreeBars onClick={handle} />
+          </div>
+          <Header />
+        </header>
 
       <main className="bg-gray-100">
         <div className="flex justify-between items-center p-4 ">
@@ -41,6 +56,6 @@ export default function AddAttributes() {
           <footer>
             <Footer />
           </footer>
-    </div>
+    </div></div>
   )
 }
