@@ -1,9 +1,7 @@
 import React, { useState } from "react";
-import { FaArrowTrendUp } from "react-icons/fa6";
-import { Chart as ChartJS } from "chart.js/auto"   
+import { FaArrowTrendUp } from "react-icons/fa6";  
 import { Bar } from "react-chartjs-2";
 import revenueData from "../services/revenueData.json";
-
 
 export default function Earnings() {
   const [view, setView] = useState(false);
@@ -13,8 +11,8 @@ export default function Earnings() {
 
   return (
     <>
-      <div className="border-2 w-[48%] m-2 h-[500px] bg-white rounded-2xl shadow-xl p-4 ">
-        <div className="flex justify-between items-center py-2">
+      <div className="border-2 w-[48%] max-sm:w-full m-2 bg-white rounded-2xl shadow-xl p-4 ">
+        <div className="flex flex-wrap justify-between items-center py-2">
           <h1 className="font-bold text-xl"> Earnings </h1>
           <p
             onClick={handleViewAll}
@@ -37,7 +35,7 @@ export default function Earnings() {
             </div>
           </p>
         </div>
-        <div className="flex gap-4 my-4">
+        <div className="flex flex-wrap gap-4 my-4">
           <div>
             <div className="flex gap-2 items-center">
               <div className="w-4 h-4 rounded-full bg-sky-500"></div>

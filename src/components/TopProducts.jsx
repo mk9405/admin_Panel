@@ -10,8 +10,8 @@ export default function TopProducts() {
 
   return (
     <>
-    <div className="border-2 w-[48%] m-2 h-[400px] bg-white rounded-2xl shadow-xl p-4">
-    <div className="flex justify-between items-center">
+    <div className=" border-2 w-[48%] max-sm:w-full m-2 bg-white rounded-2xl shadow-xl p-4">
+    <div className="flex  justify-between items-center">
       <h1 className="font-bold text-xl">Top Products</h1>
       <p
         onClick={handleViewAll}
@@ -33,8 +33,6 @@ export default function TopProducts() {
     </div>
         <TopProductsList className="hover:bg-gray-300" />
     </div>
-     
-     
     </>
   );
 }

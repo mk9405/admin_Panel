@@ -56,77 +56,90 @@ export default function OrderList() {
   ];
   const [show, setShow] = useState(false);
   const handle = () => {
-    setShow(!show);
+    setShow(true);
+  };
+
+  const handleClose = () => {
+    if (show) {
+      setShow(false);
+    }
   };
 
   return (
-    <div className="flex flex-row ">
-      <div className={show ? "w-[250px] duration-500" : "w-0 duration-500"}>
-        <LeftSidebar />
+    <div className="flex flex-row bg-[#f2f7fb]">
+      <div
+        className={
+          show ? "w-[280px] duration-500 max-sm:absolute" : "w-0 duration-500"
+        }
+      >
+        <LeftSidebar  handleClose={handleClose}/>
       </div>
 
-      <div className={show ? " w-[60%]  flex-1": "w-full"}>
+      <div className={show ? " w-[60%]  flex-1" : "w-full"}>
         <header className="flex items-center  justify-between">
-          <div  className="text-3xl pl-2">
-          <VscThreeBars onClick={handle}  />
+          <div className={show ? "hidden" : "text-3xl pl-2 bg-white py-[26px]"}>
+            <VscThreeBars onClick={handle} />
           </div>
           <Header />
         </header>
 
-      <main className="bg-gray-100">
-        <div className="flex justify-between items-center p-4 ">
-          <h1 className="font-bold text-2xl ">Add Attribute </h1>
-          <div className="flex gap-4 items-center ">
-            <h1>Dashboard </h1>
-            <IoIosArrowForward />
-            <h1>User</h1>
-            <IoIosArrowForward />
-            <h1> All User </h1>
+        <main className="bg-gray-100">
+          <div className="flex flex-wrap gap-2 justify-between items-center p-4 ">
+            <h1 className="font-bold text-2xl ">Add Attribute </h1>
+            <div className="flex gap-4 items-center ">
+              <h1>Dashboard </h1>
+              <IoIosArrowForward />
+              <h1>User</h1>
+              <IoIosArrowForward />
+              <h1> All User </h1>
+            </div>
           </div>
-        </div>
 
-        <div className="border-2 rounded-xl  shadow-xl bg-white w-[95%] mx-10 p-4 ">
-          <div className="flex justify-between ">
-            <div className="flex gap-4 items-center">
-              <input
-                className="w-[400px] border-2 rounded-xl p-2 h-10 "
-                type="search"
-                placeholder="Search Here"
-              />
-            </div>
-            <button className="w-[200px] font-bold text-blue-500 border-2 border-blue-500 rounded-xl px-4 py-2 hover:text-white hover:bg-blue-500">
-             + Add New
-            </button>
-          </div>
-          <div className="overflow-x-scroll no-scrollbar py-5">
-            <div className="font-bold flex justify-between bg-gray-50 h-10 rounded-xl items-center p-4 px-20 w-[120%]  ">
-              <h1 className="w-[8%]">User</h1>
-              <h1>Phone</h1>
-              <h1>Email</h1>
-              <h1>Action</h1>
-            </div>
-            {data.map((d) => (
-              <div
-                className="flex items-center justify-between w-[120%] pr-16 hover:bg-gray-300 duration-300 my-4 rounded-xl"
-              >
-                <div className="flex items-center gap-2 font-bold">
-                  <img width={50} height={50} className="rounded-xl" src={d.image} alt="" />
-                  <div>
-                  <h1>Kristin Watson</h1>
-                  <p className="text-gray-400 text-xs">Product Name </p>
-                  </div>
-                 
-                </div>
-                <p>$1,434.500</p>
-                <p>1650</p>
-                <div className="flex gap-4">
-                  <GrView color="blue" />
-                  <AiOutlineEdit color="green" />
-                  <MdDelete  color="red"/>
-                </div>
+          <div className="border-2 rounded-xl  shadow-xl bg-white w-[95%] max-sm:mx-auto mx-10 p-4 ">
+            <div className="flex flex-wrap gap-2 max-sm:w-full justify-between ">
+              <div className="flex flex-wrap max-sm:w-full gap-4 items-center">
+                <input
+                  className="w-[400px]  border-2 rounded-xl p-2 h-10 "
+                  type="search"
+                  placeholder="Search Here"
+                />
               </div>
-            ))}
-          </div>
+              <button className="w-[200px] max-sm:w-full font-bold text-blue-500 border-2 border-blue-500 rounded-xl px-4 py-2 hover:text-white hover:bg-blue-500">
+                + Add New
+              </button>
+            </div>
+            <div className="overflow-x-scroll no-scrollbar py-5">
+              <div className="font-bold flex justify-between bg-gray-50 h-10 rounded-xl items-center p-4 px-20 w-[120%]  ">
+                <h1 className="w-[8%]">User</h1>
+                <h1>Phone</h1>
+                <h1>Email</h1>
+                <h1>Action</h1>
+              </div>
+              {data.map((d) => (
+                <div className="flex items-center justify-between w-[120%] pr-16 hover:bg-gray-300 duration-300 my-4 rounded-xl">
+                  <div className="flex items-center gap-2 font-bold">
+                    <img
+                      width={50}
+                      height={50}
+                      className="rounded-xl"
+                      src={d.image}
+                      alt=""
+                    />
+                    <div>
+                      <h1>Kristin Watson</h1>
+                      <p className="text-gray-400 text-xs">Product Name </p>
+                    </div>
+                  </div>
+                  <p>$1,434.500</p>
+                  <p>1650</p>
+                  <div className="flex gap-4">
+                    <GrView color="blue" />
+                    <AiOutlineEdit color="green" />
+                    <MdDelete color="red" />
+                  </div>
+                </div>
+              ))}
+            </div>
             <hr />
             <div className="flex justify-between items-center py-4">
               <h1 className="font-semibold text-gra-400">Showing 10 entries</h1>
@@ -148,14 +161,13 @@ export default function OrderList() {
                 </div>
               </div>
             </div>
-        </div>
-      </main>
+          </div>
+        </main>
 
-      <footer>
-        <Footer />
-      </footer>
-    </div>
+        <footer>
+          <Footer />
+        </footer>
+      </div>
     </div>
   );
 }
-

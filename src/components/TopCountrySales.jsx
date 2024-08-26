@@ -11,7 +11,7 @@ export default function TopCountrySales() {
 
   return (
     <>
-    <div className="border-2 w-[48%] m-2 h-[400px] bg-white rounded-2xl shadow-xl p-4">
+    <div className="border-2 w-[48%] max-sm:w-full m-2 bg-white rounded-2xl shadow-xl p-4">
     <div className="flex justify-between items-center py-2">
       <h1 className="font-bold text-xl">Top Countries By Sales</h1>
       <p

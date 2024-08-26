@@ -13,7 +13,7 @@ export default function ReportAnalysisCart() {
         return (
           <div
             key={index}
-            className=" bg-white shadow-lg border-2 w-[30%] h-[300px] m-5 rounded-2xl p-4 justify-between items-center "
+            className=" bg-white shadow-lg border-2 w-[30%] max-sm:w-full m-5 rounded-2xl p-4 justify-between items-center "
           >
             <div className='flex justify-between'>
             <div className="flex">

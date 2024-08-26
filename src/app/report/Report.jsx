@@ -12,68 +12,78 @@ import { MdDelete } from "react-icons/md";
 export default function Report() {
   const [show, setShow] = useState(false);
   const handle = () => {
-    setShow(!show);
+    setShow(true);
+  };
+
+  const handleClose = () => {
+    if (show) {
+      setShow(false);
+    }
   };
 
   const data = [
     {
       transferId: 11081197,
-      name: "Kathryn Murphy"
+      name: "Kathryn Murphy",
     },
     {
       transferId: 11081198,
-      name: "Floyd Milees"
+      name: "Floyd Milees",
     },
     {
       transferId: 11081197,
-      name: "Brooklyn Simmons"
+      name: "Brooklyn Simmons",
     },
     {
       transferId: 11081198,
-      name: "Wade Waren"
-    },
-    {
-     transferId: 11081197,
-      name: "Devon Lane"
-    },
-    {
-      transferId: 11081198,
-      name: "Jane Coper"
+      name: "Wade Waren",
     },
     {
       transferId: 11081197,
-      name: "Jane Wilson"
+      name: "Devon Lane",
     },
     {
       transferId: 11081198,
-      name: "albert flores"
+      name: "Jane Coper",
     },
     {
       transferId: 11081197,
-      name: "Robert Fox"
+      name: "Jane Wilson",
     },
     {
       transferId: 11081198,
-      name: "Theresa"
+      name: "albert flores",
+    },
+    {
+      transferId: 11081197,
+      name: "Robert Fox",
+    },
+    {
+      transferId: 11081198,
+      name: "Theresa",
     },
   ];
 
   return (
-    <div className="flex flex-row ">
-      <div className={show ? "w-[250px] duration-500" : "w-0 duration-500"}>
-        <LeftSidebar />
+    <div className="flex flex-row bg-[#f2f7fb] ">
+      <div
+        className={
+          show ? "w-[280px] duration-500 max-sm:absolute" : "w-0 duration-500"
+        }
+      >
+        <LeftSidebar handleClose={handleClose} />
       </div>
 
       <div className={show ? " w-[60%]  flex-1" : "w-full"}>
         <header className="flex items-center  justify-between">
-          <div className="text-3xl pl-2">
+          <div className={show ? "hidden" : "text-3xl pl-2 bg-white py-[26px]"}>
             <VscThreeBars onClick={handle} />
           </div>
           <Header />
         </header>
 
         <main>
-          <div className="flex justify-between items-center p-4 ">
+          <div className="flex flex-wrap gap-2 justify-between items-center p-4 ">
             <h1 className="font-bold text-2xl ">Add Attribute </h1>
             <div className="flex gap-4 items-center ">
               <h1>Dashboard </h1>
@@ -88,23 +98,20 @@ export default function Report() {
             <ReportAnalysisCart />
           </div>
 
-          <div className="border-2 rounded-xl  shadow-xl bg-white w-[95%] m-5 p-4 ">
+          <div className="border-2 rounded-xl  shadow-xl bg-white w-[95%] max-sm:mx-auto m-5 p-4 ">
             <h1 className="font-bold text-2xl">Transfer History</h1>
             <div className="overflow-x-scroll no-scrollbar py-4">
-            <div className="font-bold flex justify-between bg-gray-50 h-14 rounded-xl items-center p-2 pr-10 w-full  ">
-              <h1>Transfer Id</h1>
-              <h1>Name</h1>
-              <h1>Date</h1>
-              <h1>Total</h1>
-              <h1>Action</h1>
-            </div>
+              <div className="font-bold flex justify-between bg-gray-50 h-14 rounded-xl items-center p-2 pr-10 w-full  ">
+                <h1>Transfer Id</h1>
+                <h1>Name</h1>
+                <h1>Date</h1>
+                <h1>Total</h1>
+                <h1>Action</h1>
+              </div>
               {data.map((d) => (
                 <div
                   style={{
-                    backgroundColor:
-                      d.transferId === 11081198
-                        ? "#f5f5f5"
-                        : "",
+                    backgroundColor: d.transferId === 11081198 ? "#f5f5f5" : "",
                   }}
                   className="flex items-center justify-between w-full h-14 px-2  hover:bg-gray-200 my-2 rounded-xl"
                 >

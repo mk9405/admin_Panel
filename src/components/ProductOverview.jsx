@@ -12,7 +12,7 @@ export default function ProductOverview() {
 
   return (
     <>
-    <div className="border-2 w-[61%] m-2 h-[600px] bg-white rounded-2xl shadow-xl p-4 overflow-hidden">
+    <div className="border-2 w-[61%] max-sm:w-full m-2 bg-white rounded-2xl shadow-xl p-4 overflow-hidden">
     <div className="flex justify-between items-center">
       <h1 className="font-bold text-xl">Product Overview</h1>
       <p

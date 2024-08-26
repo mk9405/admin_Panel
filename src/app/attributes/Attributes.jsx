@@ -11,8 +11,15 @@ import { VscThreeBars } from "react-icons/vsc";
 export default function Attribute() {
   const [show, setShow] = useState(false);
   const handle = () => {
-    setShow(!show);
+    setShow(true);
   };
+
+  const handleClose = () => {
+    if (show) {
+      setShow(false);
+    }
+  };
+
   const data = [
     {
       id: 1,
@@ -66,21 +73,25 @@ export default function Attribute() {
     },
   ];
   return (
-    <div className="flex flex-row ">
-      <div className={show ? "w-[250px] duration-500" : "w-0 duration-500"}>
-        <LeftSidebar />
+    <div className="flex flex-row  bg-[#f2f7fb]">
+      <div
+        className={
+          show ? "w-[280px] duration-500 max-sm:absolute" : "w-0 duration-500"
+        }
+      >
+        <LeftSidebar handleClose={handleClose} />
       </div>
 
       <div className={show ? " w-[60%]  flex-1" : "w-full"}>
         <header className="flex items-center  justify-between">
-          <div className="text-3xl pl-2">
+          <div className={show ? "hidden" : "text-3xl pl-2 bg-white py-[26px]"}>
             <VscThreeBars onClick={handle} />
           </div>
           <Header />
         </header>
 
         <main className="bg-gray-100">
-          <div className="flex justify-between items-center p-4 ">
+          <div className="flex flex-wrap gap-2 justify-between items-center p-4 ">
             <h1 className="font-bold text-2xl ">Add Attribute </h1>
             <div className="flex gap-4 items-center ">
               <h1>Dashboard </h1>
@@ -91,9 +102,9 @@ export default function Attribute() {
             </div>
           </div>
 
-          <div className="border-2 rounded-xl  shadow-xl bg-white w-[95%] mx-10 p-4 ">
-            <div className="flex justify-between ">
-              <div className="flex gap-4 items-center">
+          <div className="border-2 rounded-xl shadow-xl bg-white w-[95%] max-sm:w-full max-sm:mx-auto  mx-10 p-4 ">
+            <div className="flex flex-wrap gap-2 justify-between ">
+              <div className="flex flex-wrap gap-4 items-center">
                 <h1 className="font-semibold">showing</h1>
                 <select className="font-semibold text-gary-400 border-2 py-2 px-4 h-10 rounded-xl">
                   <option value="">10</option>
@@ -102,12 +113,12 @@ export default function Attribute() {
                 </select>
                 <h1 className="font-semibold">Entries</h1>
                 <input
-                  className="w-[400px] border-2 rounded-xl p-2 h-10 "
+                  className="w-[400px] max-sm:w-full border-2 rounded-xl p-2 h-10 "
                   type="search"
                   placeholder="Search Here"
                 />
               </div>
-              <button className="w-[200px] font-bold text-blue-500 border-2 border-blue-500 rounded-xl px-4 py-2 hover:text-white hover:bg-blue-500">
+              <button className="w-[200px] max-sm:w-full font-bold text-blue-500 border-2 border-blue-500 rounded-xl px-4 py-2 hover:text-white hover:bg-blue-500">
                 Add New
               </button>
             </div>

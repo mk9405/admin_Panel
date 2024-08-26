@@ -1,5 +1,4 @@
 import { Route, Routes } from "react-router-dom";
-
 import React from "react";
 import HomePage from "../app/homepage/HomePage";
 import Ecommerce from "../app/ecommerce/Ecommerce";
@@ -13,7 +12,6 @@ import AddNewUser from "../app/user/AddNewUser";
 import CategoryList from "../app/category/CategoryList";
 import NewCategory from "../app/category/NewCategory";
 import LoginPage from "../app/user/login";
-import SignUpPage from "../app/user/signup";
 import Report from "../app/report/Report";
 
 function Root() {
@@ -31,9 +29,7 @@ function Root() {
       <Route path="/all-user" element={<AllUser />} />
       <Route path="/add-new-user" element={<AddNewUser />} />
       <Route path="/login" element={<LoginPage />} />
-      <Route path="/sign-up" element={<SignUpPage />} />
       <Route path="/report" element={<Report />} />
-      
     </Routes>
   );
 }

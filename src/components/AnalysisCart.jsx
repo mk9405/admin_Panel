@@ -5,6 +5,8 @@ import { HiUsers } from "react-icons/hi2";
 import { LuPackage2 } from "react-icons/lu";
 import { FaArrowTrendDown } from "react-icons/fa6";
 import { FaArrowTrendUp } from "react-icons/fa6";
+import { Line } from "react-chartjs-2";
+import revenueData from "../services/revenueData.json"
 
 export default function AnalysisCart() {
   return (
@@ -13,9 +15,9 @@ export default function AnalysisCart() {
         return (
           <div
             key={index}
-            className="flex bg-white shadow-lg border-2 w-[48%] h-[150px] m-2 rounded-2xl p-4 justify-between items-center "
+            className="flex flex-wrap bg-white shadow-lg border-2 w-[48%] max-sm:w-full m-2 rounded-2xl p-4 justify-between items-center "
           >
-            <div className="flex">
+            <div className="flex ">
               <div className="m-4 text-2xl">{item.icon}</div>
               <div>
                 <h3>{item.title}</h3>
@@ -26,9 +28,22 @@ export default function AnalysisCart() {
               <span>{item.trendIcon} </span>
               <p>{item.trend}</p>
             </div>
-            {/* <BarChart chartData={userData} /> */}
+            <Line
+              data={{
+                labels: revenueData.map((d) => d.label),
+                datasets: [
+                  {
+                    label: "profit",
+                    data: revenueData.map((d) => d.profit),
+                  },
+                  {
+                    label: "revenue",
+                    data: revenueData.map((d) => d.revenue),
+                  },
+                ],
+              }}
+            />
           </div>
-          
         );
       })}
     </div>
