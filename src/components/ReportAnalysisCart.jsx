@@ -28,7 +28,7 @@ export default function ReportAnalysisCart() {
               <p>{item.trend}</p>
             </div>
             </div>
-            <Bar data={{
+            <Bar key={index} data={{
                 labels: analysisData.map((d) => d.label),
                 datasets: [
                     {

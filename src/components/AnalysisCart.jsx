@@ -5,8 +5,7 @@ import { HiUsers } from "react-icons/hi2";
 import { LuPackage2 } from "react-icons/lu";
 import { FaArrowTrendDown } from "react-icons/fa6";
 import { FaArrowTrendUp } from "react-icons/fa6";
-import { Line } from "react-chartjs-2";
-import revenueData from "../services/revenueData.json"
+// import { Line } from "react-chartjs-2";
 
 export default function AnalysisCart() {
   return (
@@ -28,7 +27,7 @@ export default function AnalysisCart() {
               <span>{item.trendIcon} </span>
               <p>{item.trend}</p>
             </div>
-            <Line
+            {/* <Line
               data={{
                 labels: revenueData.map((d) => d.label),
                 datasets: [
@@ -42,7 +41,7 @@ export default function AnalysisCart() {
                   },
                 ],
               }}
-            />
+            /> */}
           </div>
         );
       })}
